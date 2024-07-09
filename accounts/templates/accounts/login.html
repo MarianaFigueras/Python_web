@@ -1,0 +1,16 @@
+{% extends 'home/base.html' %}
+
+{%block title_pagina%}
+<title>Iniciar Sesión</title>
+{%endblock title_pagina%}
+
+{% block mi_contenido%}
+<a class="navbar-brand" href={% url 'index' %}>Inicio</a>
+<form action={% url "login" %} method="POST">
+    {% csrf_token %}
+    <table>
+        {{formulario}}
+    </table>
+    <button>Iniciar Sesión</button>
+</form>
+{% endblock mi_contenido%}

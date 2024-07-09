@@ -1,0 +1,20 @@
+{% extends 'home/base.html' %}
+
+{%block title_pagina%}
+<title> About</title>
+{%endblock title_pagina%}
+
+{% block mi_contenido%}
+<a class="navbar-brand" href={% url 'index' %}>Inicio</a>
+
+<h1> Acerca de nosotros </h1>
+    <p> Luis Moreno:</p>
+    <p>Soy Administrador de empresas, actualmente trabajo para una empresa como Analista de Compras, me encantaria especializarme en el Area de Programacion, mi hobby es el Crossfit me ayuda a salir del dia a dia</p>
+    <hr/>
+    <p> Mariana Figueras: </p>
+    <p> Soy Licenciada en Comercio Internacional y busco diversificar en el area de programacion. Estos son mis primeros pasos y descubri que programar me resulta complejo pero a la vez desafiante, me interesa seguir capacitandome.
+    Soy de zona oeste y casualmente resultamos ser vecinos con Luis. Por ultimo, empece a jugar al voley hace poco y me parece una excelente actividad para desconectar de la rutina.</p>
+    <br/>
+    <p>Gracias!</p>
+
+{% endblock mi_contenido%}

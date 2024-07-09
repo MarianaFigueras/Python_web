@@ -1,0 +1,25 @@
+{% extends 'home/base.html' %}
+
+
+{%block title_pagina%}
+<title> Editar plato </title>
+{%endblock title_pagina%}
+
+
+{% block mi_contenido%}
+<a class="navbar-brand" href={% url 'ver_platos' %}>Volver</a>
+<form action={% url 'editar_plato' plato.id %} method="POST" enctype='multipart/form-data'>
+    {% csrf_token %}
+    <table>
+        {{form.media}}
+        {{form}}
+    </table>
+    <p>    
+        {%if plato.imagen%}
+        <img src='{{plato.imagen.url}}' width='200' height='200'>
+        {%endif%}
+    </p>
+    
+    <button>Editar</button>
+</form>
+{% endblock mi_contenido%}

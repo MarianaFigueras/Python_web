@@ -1,0 +1,16 @@
+{% extends 'home/base.html' %}
+
+{%block title_pagina%}
+<title> Eliminar pedido</title>
+{%endblock title_pagina%}
+
+{% block mi_contenido%}
+<a class="navbar-brand" href={% url 'ver_pedidos' %}>Volver</a>
+<form action={% url 'eliminar_pedido' pedido.id %} method="POST">
+    {% csrf_token %}
+    <p>
+        Confirma que desea eliminar el pedido: {{pedido}} ?
+    </p>
+    <button>Confirmar</button>
+</form>
+{% endblock mi_contenido%}

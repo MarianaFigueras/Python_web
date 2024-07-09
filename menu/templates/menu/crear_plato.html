@@ -1,0 +1,17 @@
+{% extends 'home/base.html' %}
+
+{%block title_pagina%}
+<title> Crear plato</title>
+{%endblock title_pagina%}
+
+{% block mi_contenido%}
+<a class="navbar-brand" href={% url 'index' %}>Inicio</a>
+<form action={% url "crear_plato" %} method="POST" enctype='multipart/form-data'>
+    {% csrf_token %}
+    <table>
+    {{formulario.media}}
+    {{formulario}}
+    </table>
+    <button>Crear</button>
+</form>
+{% endblock mi_contenido%}

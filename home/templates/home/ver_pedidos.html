@@ -1,0 +1,39 @@
+{% extends 'home/index.html' %}
+
+
+{%block title_pagina%}
+<title> Ver pedidos </title>
+{%endblock title_pagina%}
+
+{%block h1_texto_header %}
+Registro de pedidos
+{%endblock h1_texto_header %}
+
+{% block index_contenido%}
+<a class="navbar-brand" href={% url 'crear_pedido' %}>Crear Pedido</a>
+<p> Listado de pedidos: </p>
+
+<form action={% url "ver_pedidos" %} method="GET">
+        
+    {{formulario}}
+   
+    <button>Buscar</button>
+</form>
+
+<p>
+    {% if pedidos %}
+
+        {% for pedido in pedidos%}
+            <li>{{pedido.nombre}} - {{pedido.guarnicion}} - {{pedido.cant_porciones}} - {{pedido.fecha_pedido}}</li>    
+                <a href={% url 'eliminar_pedido' pedido.id %}>Eliminar</a>
+            </li>
+        {%endfor%}
+
+    {% else %}
+        <p>No hay pedidos creados hasta el momento o que coincidan con la busqueda realizada.</p>
+    {% endif %}
+</p>
+
+{% endblock index_contenido%}
+
+
